@@ -1,40 +1,42 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+import LogoRed from "../assets/logo-red.svg";
+import LogoDark from "../assets/logo-dark.svg";
+import LogoLight from "../assets/logo-light.svg";
 
 interface LogoImageProps {
   className?: string;
   alt: string;
   width: number;
   height: number;
+  priority?: boolean;
 }
 
-export default function LogoImage({ className, alt, width, height }: LogoImageProps) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+function subscribe(onStoreChange: () => void) {
+  if (typeof window === "undefined") return () => {};
+  const mq = window.matchMedia("(prefers-color-scheme: dark)");
+  const handler = () => onStoreChange();
+  mq.addEventListener("change", handler);
+  return () => mq.removeEventListener("change", handler);
+}
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    
-    const handleMediaQueryChange = (e: MediaQueryListEvent) => {
-      setIsDarkMode(e.matches);
-    };
+function getSnapshot() {
+  if (typeof window === "undefined") return false; // SSR = light
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+}
 
-    setIsDarkMode(mediaQuery.matches);
-    mediaQuery.addEventListener('change', handleMediaQueryChange);
-    
-    return () => {
-      mediaQuery.removeEventListener('change', handleMediaQueryChange);
-    };
-  }, []);
+export default function LogoImage({
+  className,
+  alt,
+  width,
+  height,
+  priority,
+}: LogoImageProps) {
+  const isDark = useSyncExternalStore(subscribe, getSnapshot, () => false);
 
   return (
-    <Image
-      className={className}
-      src={isDarkMode ? "/logo-red.svg" : "/logo-light.svg"}
-      alt={alt}
-      width={width}
-      height={height}
-    />
+    isDark ? <LogoRed /> : <LogoLight />
   );
 }

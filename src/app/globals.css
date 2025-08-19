@@ -2,6 +2,7 @@
   --background: #ccc3cf;
   --foreground: #141310;
   --primary: #f6b728;
+  --primary-transparent: #f6b728DE;
   --primary-dark: #fc723a;
   --secondary: #aed3e8;
   --secondary-dark: #413172;
@@ -13,6 +14,7 @@
     --background: #141310;
     --foreground: #ccc3cf;
     --primary: #f6b728;
+    --primary-transparent: #f6b728DE;
     --primary-dark: #fc723a;
     --secondary: #aed3e8;
     --secondary-dark: #413172;

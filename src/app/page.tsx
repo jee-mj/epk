@@ -2,11 +2,13 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.homeContent}>
-      {/* Home page specific content will be rendered here */}
-      <section>
-        <strong>भीम <br/>राज <br/>भट्टराई</strong>
-      </section>
-    </div>
+    <section className= {styles.viewport}>
+      <div className={styles.homeStyle}>
+          <p>भीम <br/>राज <br/>भट्टराई</p>
+      </div>
+      <div className={styles.homeContent}>
+        {/* Home page specific content will be rendered here */}
+      </div>
+    </section>
   );
 } 
