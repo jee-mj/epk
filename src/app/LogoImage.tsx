@@ -21,17 +21,11 @@ function subscribe(onStoreChange: () => void) {
 }
 
 function getSnapshot() {
-  if (typeof window === "undefined") return false; // SSR = light
+  if (typeof window === "undefined") return false;
   return window.matchMedia("(prefers-color-scheme: dark)").matches;
 }
 
-export default function LogoImage({
-  className,
-  alt,
-  width,
-  height,
-  priority,
-}: LogoImageProps) {
+export default function LogoImage({}: LogoImageProps) {
   const isDark = useSyncExternalStore(subscribe, getSnapshot, () => false);
 
   return (
