@@ -1,9 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useSyncExternalStore } from "react";
 import LogoRed from "../assets/logo-red.svg";
-import LogoDark from "../assets/logo-dark.svg";
 import LogoLight from "../assets/logo-light.svg";
 
 interface LogoImageProps {
