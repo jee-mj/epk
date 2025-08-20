@@ -1,6 +1,6 @@
 "use client";
 
-import React, { JSX, type ReactNode } from "react";
+import React, { JSX, useEffect, useState, type ReactNode } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ContactCard from "../components/ContactCard";
 import styles from "./AppUI.module.css";
@@ -19,7 +19,16 @@ const WIDE = [
 ] as const;
 
 export default function AppUI({ children }: { children: ReactNode }): JSX.Element {
-  const widescreen = false; // set to switch automatically at 350px
+  const [widescreen, setWidescreen] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    setWidescreen(mq.matches);
+    const handleChange = (e: MediaQueryListEvent) => setWidescreen(e.matches);
+    mq.addEventListener("change", handleChange);
+    return () => mq.removeEventListener("change", handleChange);
+  }, []);
+  
   return (
     <>
       <main className={styles.main}>

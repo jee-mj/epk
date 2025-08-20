@@ -4,9 +4,8 @@ export default function Tours() {
   return (
     <div className={styles.pageContent}>
       <section>
-        <h2>Tour Dates & Performances</h2>
-        <p>Upcoming electronic music performances and tour information.</p>
-        {/* Tour-specific content implementation */}
+        <h2>Tour Schedule</h2>
+        <h3>... ooh, it's staying lonely for a few milestones.</h3>
       </section>
     </div>
   );

@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import background from "../assets/background.jpg";
@@ -11,7 +14,6 @@ const MENU = [
 
 
 export default function Home() {
-  const widescreen = false; // set to switch automatically at 350px
   return (
     <section className= {styles.viewport}>
       <div className={styles.homeStyle}>
@@ -20,9 +22,9 @@ export default function Home() {
       <div className={styles.homeBackground}>
         <Image
           alt=""
-          fill                // makes the image absolutely fill the parent
-          priority           // optional: preload hero
-          sizes="100vw"      // correct responsive sizing
+          fill 
+          priority
+          sizes="100vw"
           style={{ objectFit: "cover", objectPosition: "center" }} 
           className={styles.backgroundImage}
           src={background}
@@ -30,15 +32,15 @@ export default function Home() {
       </div>
       <div className={styles.pageContent}>
       <section>
-        <h2>when his frontal lobe went, the Buddha barred the RICKSHAW!!</h2>
+        <h2>when his frontal lobe went, the Buddha barred the RICKSHAW!!1</h2>
         </section>
     </div>
       <div className={styles.homeHero}>
         <Image
           alt=""
-          priority           // optional: preload hero
-          sizes="100vw"      // correct responsive sizing
-          style={{ objectFit: "cover", objectPosition: "center" }} 
+          priority
+          sizes="100vw"
+          style={{ width: "100%", objectFit: "cover", objectPosition: "center" }} 
           src={photo}
         />
       </div>
