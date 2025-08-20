@@ -18,7 +18,7 @@ export default function Links() {
   return (
     <nav aria-label="Links" className={styles.pageContent}>
       {MENU_ITEMS.map((label) => (
-        <Link key={label} href={ROUTE_MAP[label]}>
+        <Link key={label} href={ROUTE_MAP[label]} className={syles.pageLink}>
           {label.toUpperCase()}
         </Link>
       ))}
