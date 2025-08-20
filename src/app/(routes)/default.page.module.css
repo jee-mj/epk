@@ -8,7 +8,7 @@
   justify-content: flex-start;
   overflow-y: auto;
   color: var(--background);
-  background-color: var(--tertiary-red);
+  background-color: var(--foreground);
   width: 100%;
 } /* Styling for other pages  */
 
