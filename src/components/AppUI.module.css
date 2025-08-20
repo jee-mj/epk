@@ -45,10 +45,6 @@
   overflow: hidden;
 }  /* main content section */
 
-nav {
-  width: 100%;
-} /* target only the nav htmlelement */
-
 .footer {
   padding-top: 36px;
   justify-items: end;
