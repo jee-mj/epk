@@ -9,6 +9,7 @@
   overflow-y: auto;
   color: var(--background);
   background-color: var(--tertiary-red);
+  width: 100%;
 } /* Styling for other pages  */
 
 .pageContent a {
@@ -28,3 +29,8 @@
   font-size: clamp(1rem, 0.667rem + 2.667vw, 3rem);
   line-height: 1.375;
 }
+
+
+.pageLink nav {
+  width: 100%;
+} /* target only the nav htmlelement */
