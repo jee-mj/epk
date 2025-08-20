@@ -7,6 +7,9 @@ import styles from "./AppUI.module.css";
 import { faCompass } from "@fortawesome/free-regular-svg-icons/faCompass";
 import Link from "next/link";
 
+const LINKS = [
+  { label: "LINKS", href: "/links" },
+] as const;
 const THIN = [
   { label: "ABOUT", href: "/about" },
   { label: "BHIMA", href: "/" },
@@ -50,7 +53,11 @@ export default function AppUI({ children }: { children: ReactNode }): JSX.Elemen
               ))}
 
               <span>
-                <FontAwesomeIcon icon={faCompass} title="Menu" />
+                
+                {LINKS.map((item) => (
+                  <Link key={item.href} href={item.href}>
+                    <FontAwesomeIcon icon={faCompass} title="Menu" />
+                  </Link>
               </span>
             </>
           )}
