@@ -1,0 +1,114 @@
+.ctas {
+  color: var(--tertiary-red);
+  background: var(--background);
+  padding: 8px 0 8px 0;
+  display: flex;
+  font-size: xx-large;
+  font-weight: 800;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 16px 16px 0 0;
+  width: 100%;
+} /* top bar */
+
+
+.ctas a {
+  font-size: clamp(0.75rem, 0.352rem + 3.182vi, 1.15rem);
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+  border-radius: clamp(0.75rem, 2.35rem + -8vw, 0.25rem);
+  display: none;
+}
+.ctas a:hover {
+    background-color: var(--tertiary-red);
+    color: var(--secondary);
+  transform: translateY(-2px);
+}
+.ctas svg {
+  padding: clamp(0.125rem, -0.5rem + 5vw, 0.5rem);
+  transition: all 0.2s ease;
+  border-radius: clamp(0.75rem, 2.35rem + -8vw, 0.25rem);
+}
+
+.ctas svg:hover {
+    background-color: var(--tertiary-red);
+    color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.main {
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  overflow: hidden;
+}  /* main content section */
+
+.footer {
+  padding-top: 36px;
+  justify-items: end;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto 1fr;
+  gap: 16px;
+  width: 100%;
+} /* bottom card */
+
+.footer p {
+  text-align: center;
+  justify-self: center;
+}
+
+.footer aside {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .ctas {
+    color: var(--background-transparent);
+    background: var(--foreground);
+  }
+  .ctas a:hover {
+    background-color: var(--background-transparent);
+    color: var(--foreground);
+  }
+  .ctas svg:hover {
+    background-color: var(--background-transparent);
+    color: var(--foreground);
+  }
+}
+.footer aside div {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+@media (min-width: 320px) {
+  .ctas a {
+    display: block;
+  }
+
+  .footer {
+    width: clamp(15rem, 3.402rem + 61.856vw, 30rem);
+  }
+}
+
+@media (max-width: 940px) {
+  .main {
+    align-items: center;
+    height: calc(100svh - 64px - 8px);
+  }
+
+  .ctas {
+    flex-direction: row;
+    font-size: large;
+  }
+}
+
+/* if you won't meet me in the middle you've brought to the edge */

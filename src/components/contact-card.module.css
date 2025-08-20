@@ -1,0 +1,107 @@
+
+.wrapper {
+    background-color: none;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), 0 1px 0 rgba(0,0,0,0.02);
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.wrapper:hover .card {
+    transform: rotateX(180deg);
+}
+
+.cardFront, .cardBack {
+  text-align: left;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.cardFront {
+    padding: clamp(0.25rem, 0.023rem + 1.818vi, 0.5rem) 0 clamp(0.25rem, 0.023rem + 1.818vi, 0.5rem) clamp(0.5rem, -0.75rem + 6.667vi, 1rem);
+    justify-content: space-around;
+    background-color: var(--background);
+    color: var(--tertiary-red);
+}
+
+
+.cardFront h1 {
+  font-size: clamp(0.75rem, 0.238rem + 4.098vw, 2rem);
+}
+.cardFront h3 {
+  font-size: clamp(0.55rem, 0.09rem + 3.279vw, 1.5rem);
+}
+.cardFront strong {
+  font-size: clamp(0.5rem, 0.193rem + 2.459vw, 1.25rem);
+}
+
+.cardBack {
+    background-color: var(--background);
+    color: var(--tertiary-red);
+    transform: rotateX(180deg);
+}
+
+.cardBack__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: calc(100% - clamp(3rem, 0.951rem + 16.393vw, 8rem));
+    height: 100%;
+    padding: clamp(0.75rem, 0.523rem + 1.818vw, 1rem) 0 clamp(0.75rem, 0.523rem + 1.818vw, 1rem) clamp(0.25rem, 0.023rem + 1.818vi, 0.5rem);
+}
+
+.card svg {
+  width: clamp(3rem, 0.951rem + 16.393vw, 8rem);
+  height: clamp(3rem, 0.951rem + 16.393vw, 8rem);
+  border-radius: 16px;
+  z-index: 1;
+  align-self: flex-end;
+}
+
+.socialIcon svg {
+    width: clamp(1.5rem, 0.475rem + 8.197vw, 4rem);
+    height: clamp(1.5rem, 0.475rem + 8.197vw, 4rem);
+}
+
+.socialIcon svg:hover {
+  background-color: var(--foreground);
+  color: var(--primary);
+  transform: translateY(-2px);
+  padding: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .wrapper {
+    box-shadow: none;
+  }
+  .cardFront {
+    background-color: var(--tertiary-red);
+    color: var(--secondary);
+  }
+  .cardBack {
+    background-color: var(--tertiary-red);
+    color: var(--secondary);
+  }
+  .socialIcon svg:hover {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+@media (min-width: 688px) {
+  .cardBack__wrapper {
+    width: 352px;
+  }
+}

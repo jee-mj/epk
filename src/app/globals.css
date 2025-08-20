@@ -1,10 +1,11 @@
 :root {
   --background: #ccc3cf;
+  --background-transparent: #ccc3cfcc;
   --foreground: #141310;
   --primary: #f6b728;
   --primary-transparent: #f6b728DE;
   --primary-dark: #fc723a;
-  --secondary: #aed3e8;
+  --secondary: #fff;
   --secondary-dark: #413172;
   --tertiary-red: #ba0810;
 }
@@ -12,11 +13,12 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #141310;
+    --background-transparent: #141310cc;
     --foreground: #ccc3cf;
     --primary: #f6b728;
     --primary-transparent: #f6b728DE;
     --primary-dark: #fc723a;
-    --secondary: #aed3e8;
+    --secondary: #fff; /* override for darkmode */
     --secondary-dark: #413172;
     --tertiary-red: #ba0810;
   }
@@ -38,6 +40,15 @@ main {
   background: var(--primary);
   width: 100%;
   height: 100%;
+}
+
+span {
+  display: flex;
+  justify-content: center;
+}
+
+span svg {
+  font-size: clamp(2rem, -1.75rem + 17.143vi, 2.75rem);
 }
 
 * {

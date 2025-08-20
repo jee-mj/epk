@@ -1,0 +1,20 @@
+
+.pageContent {
+  padding: 40px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-y: auto;
+  color: var(--secondary-dark);
+} /* Styling for other pages  */
+
+.pageContent h2 {
+  font-size: clamp(2rem, 1.333rem + 5.333vw, 6rem);
+  line-height: 1.5;
+}
+.pageContent span {
+  font-size: clamp(1rem, 0.667rem + 2.667vw, 3rem);
+  line-height: 1.375;
+}

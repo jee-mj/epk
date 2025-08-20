@@ -1,4 +1,4 @@
-import styles from "../../page.module.css";
+import styles from "../default.page.module.css";
 
 export default function Tours() {
   return (

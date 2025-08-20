@@ -1,9 +1,11 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
-import LogoImage from "./LogoImage";
 import styles from "./page.module.css";
 import "./globals.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import "../lib/fontAwesome";
+import AppUI from "../components/AppUI";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,34 +27,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Mobile-first: false by default (mobile view shows the compass).
+  // You can later replace this with a real media query signal in a client component.
+
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className={styles.page}>
-          <main className={styles.main}>
-            <nav className={styles.ctas}>
-              <Link href="/about">ABOUT</Link>
-              <Link href="/">MUSIC</Link>
-              <Link href="/tours">TOURS</Link>
-            </nav>
-            {children}
-          </main>
-          <footer className={styles.footer}>
-            <aside>
-              <div>
-                <h1>Bhima Raj Bhattarai</h1>
-                <h3>Modern Electronic Music</h3>
-                <strong>Sydney, Australia</strong>
-              </div>
-              <LogoImage
-                className={styles.logo}
-                alt="Bhima Raj Bhattarai"
-                width={132}
-                height={132}
-              />
-            </aside>
-            <p>All Rights Reserved © 2025</p>
-          </footer>
+          <AppUI>{children}</AppUI>
         </div>
       </body>
     </html>
