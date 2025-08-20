@@ -57,7 +57,7 @@ export default function AppUI({ children }: { children: ReactNode }): JSX.Elemen
                 {LINKS.map((item) => (
                   <Link key={item.href} href={item.href}>
                     <FontAwesomeIcon icon={faCompass} title="Menu" />
-                  </Link>
+                  </Link>))}
               </span>
             </>
           )}
