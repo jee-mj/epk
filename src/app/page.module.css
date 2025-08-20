@@ -89,7 +89,7 @@
 }
 
 .homeStyle {
-  color: var(--secondary-dark);
+  color: var(--secondary);
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -97,7 +97,7 @@
   z-index: 3;
   overflow: hidden;
   background-color: transparent;
-  opacity: 8%;
+  opacity: 19%;
 } /* Styling background in home page */
 
 .homeStyle p {
@@ -107,6 +107,7 @@
   padding-bottom: 0.5rem;
   padding-left: 0.2rem;
   margin: 0;
+  transform: rotateY(180deg);
 } /* Background text styling */
 
 @media (max-width: 940px) {

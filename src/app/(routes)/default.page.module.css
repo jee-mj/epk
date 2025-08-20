@@ -7,7 +7,8 @@
   align-items: center;
   justify-content: flex-start;
   overflow-y: auto;
-  color: var(--secondary-dark);
+  color: var(--background);
+  background-color: var(--tertiary-red);
 } /* Styling for other pages  */
 
 .pageContent h2 {
