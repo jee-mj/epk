@@ -1,6 +1,5 @@
-import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   // --- Required for GitHub Pages static export under /epk ---
   output: "export",
   basePath: "/epk",
