@@ -6,11 +6,8 @@ const MENU_ITEMS = ["About", "Music", "Tours", "Media"] as const;
 // If "Music" is your homepage, keep this map. Otherwise change to "/music".
 const ROUTE_MAP: Record<(typeof MENU_ITEMS)[number], string> = {
   About: "/about",
-  _: "",
   Music: "/music",
-  _: "",
   Tours: "/tours",
-  _: "",
   Media: "/media",
 };
 
@@ -19,6 +16,7 @@ export default function Links() {
     <nav aria-label="Links" className={styles.pageContent}>
       {MENU_ITEMS.map((label) => (
         <Link key={label} href={ROUTE_MAP[label]} className={syles.pageLink}>
+          <br/>
           {label.toUpperCase()}
         </Link>
       ))}
