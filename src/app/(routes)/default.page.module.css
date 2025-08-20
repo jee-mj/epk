@@ -11,6 +11,11 @@
   background-color: var(--tertiary-red);
 } /* Styling for other pages  */
 
+.pageContent a {
+  font-size: clamp(2rem, 1.333rem + 5.333vw, 6rem);
+  line-height: 1.5;
+}
+
 .pageContent h2 {
   font-size: clamp(2rem, 1.333rem + 5.333vw, 6rem);
   line-height: 1.5;
