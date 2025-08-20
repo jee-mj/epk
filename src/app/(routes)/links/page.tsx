@@ -13,7 +13,7 @@ const ROUTE_MAP: Record<(typeof MENU_ITEMS)[number], string> = {
 
 export default function Links() {
   return (
-    <nav aria-label="Links" className={styles.pageContent} style={backgroundColor: 'var(--foreground)'})}>
+    <nav aria-label="Links" className={styles.pageContent} style={{ backgroundColor: 'var(--foreground)' }})}>
       {MENU_ITEMS.map((label) => (
         <Link key={label} href={ROUTE_MAP[label]} className={styles.pageLink}>
           <br/>
