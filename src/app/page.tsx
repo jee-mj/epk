@@ -36,7 +36,7 @@ export default function Home() {
     </div>
       <div className={styles.homeHero}>
         <Image
-          alt=""
+          alt="Portrait of Bhim Raj Bhattarai"
           priority
           sizes="100vw"
           style={{ width: "100%", objectFit: "cover", objectPosition: "center" }} 
