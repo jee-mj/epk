@@ -24,12 +24,17 @@ export default function ContactCard({name, genre, location, tiktok, discord, you
       if (!val) return undefined;
       if (val.startsWith("http://") || val.startsWith("https://")) return val;
       if (kind === "tiktok") return `https://www.tiktok.com/@${val.replace(/^@/, "")}`;
+      if (kind === "discord") {
+        const normalized = val.trim();
+        if (/^\d+$/.test(normalized)) return `https://discord.com/users/${normalized}`;
+        return `https://discord.gg/${normalized}`;
+      }
       if (kind === "youtube") return `https://www.youtube.com/${val}`;
       if (kind === "soundcloud") return `https://www.soundcloud.com/${val}`;
       return val;
     };
     const tiktokUrl = toUrl(tiktok, "tiktok");
-    const discordUrl = toUrl(discord, "soundcloud");
+    const discordUrl = toUrl(discord, "discord");
     const youtubeUrl = toUrl(youtube, "youtube");
 
     return (
