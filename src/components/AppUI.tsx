@@ -68,12 +68,8 @@ export default function AppUI({ children }: { children: ReactNode }): JSX.Elemen
       <footer className={styles.footer}>
         <ContactCard
           name={"Bhima Raj Bhattarai"}
-          nickname={"BRB"}
-          email={"bhima@bhattarai.com.au"}
-          phoneNumber={61461461461}
           genre={"Modern Electronic Music"}
           location={"Sydney, Australia"}
-          tagline={"Just gimme a sec..."}
           tiktok={"tiktokuser"}
           discord={"discorduser"}
           youtube={"youtubeuser"}
