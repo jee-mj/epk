@@ -7,12 +7,8 @@ import { faTiktok, faDiscord, faYoutube } from "@fortawesome/free-brands-svg-ico
 
 interface ContactCardProps {
     name: string;
-    nickname: string;
-    email: string;
-    phoneNumber: number;
     genre: string;
     location: string;
-    tagline: string;
     tiktok: string;
     discord: string;
     youtube: string;
